@@ -21,11 +21,41 @@ Then remove `-DryRun` to send for real.
 
 ## Setup
 
+### Reuse an existing SMTP setup
+
+If a working `config.json` and `credentials.xml` already exist, prefer reusing them instead of creating new ones.
+
+Example:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "<skill-dir>\scripts\send-task-email.ps1" -Subject "Task done" -Body "Full result here" -ConfigPath "C:\Users\28111\Desktop\ARBATOS\local\codex-rule\config.json" -CredentialPath "C:\Users\28111\Desktop\ARBATOS\local\codex-rule\credentials.xml" -DryRun
+```
+
+If the dry run looks correct, remove `-DryRun`.
+
+### Create a fresh local setup
+
 If you need a fresh setup:
 
-1. Copy `references/config.example.json` to a writable config path, or let `scripts/setup-smtp-credential.ps1` create `config.local.json` for you.
-2. Edit the sender, recipient, and SMTP host settings.
-3. Save the SMTP auth code with `scripts/setup-smtp-credential.ps1`.
+1. Run `scripts/setup-smtp-credential.ps1`.
+2. Let it create `config.local.json` and `credentials.local.xml`, or pass custom paths.
+3. Edit the config fields.
+4. Save the SMTP auth code with the setup script.
+5. Dry run `send-task-email.ps1` before sending a real message.
+
+This skill uses these default local files when you do not pass custom paths:
+
+- `<skill-dir>\config.local.json`
+- `<skill-dir>\credentials.local.xml`
+
+The most important config fields are:
+
+- `smtp.host`
+- `smtp.port`
+- `smtp.useSsl`
+- `mail.from`
+- `mail.to`
+- `subjectPrefix`
 
 For QQ Mail, keep `smtp.host = smtp.qq.com` and use the SMTP auth code, not the web login password.
 
