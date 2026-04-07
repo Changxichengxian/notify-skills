@@ -1,0 +1,12 @@
+{
+  "smtp": {
+    "host": "smtp.qq.com",
+    "port": 587,
+    "useSsl": true
+  },
+  "mail": {
+    "from": "sender@example.com",
+    "to": ["recipient@example.com"]
+  },
+  "subjectPrefix": "[Codex]"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Windows 完成提醒"
+  short_description: "任务做完后播放 Windows 系统提示音并给出明确完成提醒"
+  default_prompt: "Use $windows-task-notify to play a Windows completion sound after finishing a task."

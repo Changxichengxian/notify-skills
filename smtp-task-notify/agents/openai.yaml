@@ -1,0 +1,4 @@
+interface:
+  display_name: "邮件完成提醒"
+  short_description: "任务做完后通过 SMTP 发送完整结果邮件到指定收件邮箱"
+  default_prompt: "Use $smtp-task-notify to send an email summary after finishing a task."
