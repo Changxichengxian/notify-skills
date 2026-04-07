@@ -1,4 +1,4 @@
-# AI agent
+# notify-skills
 
 这是我长期使用 AI agent 时整理出来的两个本地提醒 skill，最初主要是因为我用 Codex 时遇到了两个很实际的问题。
 
@@ -11,9 +11,7 @@ AI agent 干活经常一跑就是很久。我可以先去做别的事，但又�
 - `windows-task-notify`：任务结束后播放 Windows 系统提示音
 - `smtp-task-notify`：任务结束后通过 SMTP 发邮件
 
-## 适合怎么发
 
-放 GitHub 最合适。现在这类 skill 更像“仓库里的一个文件夹”，适合按 GitHub 路径安装，也适合自己收藏、复用和继续改。
 
 ## 安装方式
 
